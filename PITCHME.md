@@ -21,7 +21,7 @@ Note:
 
 ### Asynchronous Boundaries
 
-![Image](./assets/20170506_150724.jpg)
+![Image](./assets/Slide1.PNG)
 
 Note:
 
@@ -29,7 +29,7 @@ Note:
 
 ### Asynchronous Boundaries
 
-![Image](./assets/20170506_150753.jpg)
+![Image](./assets/Slide2.PNG)
 
 Note:
 
@@ -37,7 +37,7 @@ Note:
 
 ### Back Pressure
 
-![Image](./assets/20170506_151317.jpg)
+![Image](./assets/Slide3.PNG)
 
 Note:
 
@@ -45,7 +45,7 @@ Note:
 
 ### Back Pressure
 
-![Image](./assets/20170506_151242.jpg)
+![Image](./assets/Slide4.PNG)
 
 Note:
 
