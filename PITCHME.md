@@ -79,7 +79,7 @@ Built on top of Akka Actors
 
 ---
 
-### What is Akka Streams?
+### Expressing Intent
 
 ![Image](./assets/20170506_153845.jpg)
 
@@ -91,7 +91,16 @@ GraphDSL in somes ways is similar to sequence diagram
 
 ---
 
-### What is Akka Streams?
+### Expressing Intent
+
+![Image](./assets/20170509_215235.jpg)
+
+Note:
+
+
+---
+
+### Expressing Intent
 
 ```scala
 import GraphDSL.Implicits._
