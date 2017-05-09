@@ -248,7 +248,9 @@ Note:
 ---
 ### A Simple Example
 
-Note:
+![Image](./assets/20170509_225523.jpg)
+
+Note: 
 
 ---
 
