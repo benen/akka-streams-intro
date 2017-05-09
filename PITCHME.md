@@ -239,8 +239,6 @@ Note:
 ---
 ### A Simple Example
 
-* TFID? Twitter Firehouse? 
-
 Note:
 
 ---
