@@ -131,7 +131,7 @@ Materialized Value is what can be obtained once the graph has completed it's exe
 
 ### How do I work with Akka-Streams?
 
-![Image](./assets/20170506_160918.jpg)
+![Image](./assets/20170509_220315.jpg)
 
 Note:
 1. Define element
