@@ -229,7 +229,7 @@ Shapes that have one input, but multiple outputs
 ```scala
 GraphDSL.create() { implicit builder => 
   ...  
-  val broadcast = builderBroadcast[Int](2)
+  val broadcast = builder.add(Broadcast[Int](2))
   someSource ~> broadcast.in
                 broadcast.out(0) ~> someSink
                 broadcast.out(1) ~> anotherSink
@@ -247,7 +247,7 @@ Shapes that have multiple inputs, but a single output
 ```scala
 GraphDSL.create() { implicit builder => 
   ...  
-  val pickMax = ZipWith[Int, Int, Int](math.max _)
+  val pickMax = builder.add(ZipWith[Int, Int, Int](math.max _))
   someSource ~>  pickMax.in0 
   otherSource ~> pickMax.in1
                  pickMax.out ~> sink
