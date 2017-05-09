@@ -122,15 +122,6 @@ Note:
 
 ### How do I work with Akka-Streams?
 
-1. Define a graph
-2. Materialise it
-  
-Note:
-Materialized Value is what can be obtained once the graph has completed it's execution
----
-
-### How do I work with Akka-Streams?
-
 ![Image](./assets/20170509_220315.jpg)
 
 Note:
@@ -138,6 +129,7 @@ Note:
 2. Assemble into a graph
 3. Materializer fuses graph together into a concrete representation
 4. Fused representation gets implemented as actor
+Materialized Value is what can be obtained once the graph has completed it's execution
 You can have other materializers than Actor, including Futures etc. but Actor seems to be the 
 most robust
 
@@ -170,7 +162,7 @@ Note:
 Can combine stages in almost any way we want
 
 ---
-### Source
+### Source API
 
 Emits elements onto a stream 
 ```scala
@@ -187,7 +179,7 @@ val actor = Source.actorRef
 ```
 
 ---
-### Flow
+### Flow API
 
 Apply a transformation to each element 
 ```scala
@@ -208,7 +200,7 @@ sliding windows
 drop
 
 ---
-### Sink
+### Sink API
 
 A description of how to terminate a stream of elements
 ```scala
@@ -234,6 +226,16 @@ Shapes that have one input, but multiple outputs
 * Balance
 * Partition
 
+```scala
+GraphDSL.create() { implicit builder => 
+  ...  
+  val broadcast = builderBroadcast[Int](2)
+  someSource ~> broadcast.in
+                broadcast.out(0) ~> someSink
+                broadcast.out(1) ~> anotherSink
+  ...
+```
+
 Note: 
 ---
 ### FanIn Shapes
@@ -241,6 +243,16 @@ Shapes that have multiple inputs, but a single output
 
 * Zip
 * Merge
+
+```scala
+GraphDSL.create() { implicit builder => 
+  ...  
+  val pickMax = ZipWith[Int, Int, Int](math.max _)
+  someSource ~>  pickMax.in0 
+  otherSource ~> pickMax.in1
+                 pickMax.out ~> sink
+  ...
+```
 
 Note: 
 
