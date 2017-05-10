@@ -5,9 +5,12 @@
 ###### _10/05/2017_
 
 Note:
-LEGO® for Backend Programming
-I would say for front end developers too, but unfortunately it's not supported by akka-js directly. 
-Integrations exist for akka-http though which front end might find useful
+
+API developed by the Akka Team, sits on top of Akka
+
+Intention is for developing highly scalable and resilient applications,
+using the reactive streams api, without getting bogged down in implementation
+details.
 
 ---
 
@@ -170,7 +173,7 @@ def mySource: Source[Out, MaterializedValue]
 
 val numbers = Source(Seq(1, 2, 3, 4, 5, 6))
 
-val lines = Source.fromIterator(myFile.getLines)
+val lines = Source.fromIterator(() => myFile.getLines)
 
 val queue = Source.queue
 
@@ -187,7 +190,7 @@ def myFlow: Flow[In, Out, MaterializedValue]
 
 val square = Flow[Int].map(n => n * n)
 
-val repeat = Flow[Int].mapConcat(n => immutale.Seq(n, n))
+val repeat = Flow[Int].mapConcat(n => immutable.Seq(n, n))
 
 val filter = Flow[Int].filter(_ % 2 == 0)
 
